@@ -89,6 +89,7 @@ func _draw_cards(count: int) -> void:
 func _spawn_card(data: CardData) -> void:
 	var card: Card = CARD_SCENE.instantiate()
 	hand_container.add_child(card)
+	card.size = Vector2(CARD_WIDTH, CARD_HEIGHT)
 	card.setup(data)
 	card.drop_attempted.connect(_on_card_drop_attempted)
 	hand.append(card)

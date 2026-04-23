@@ -7,6 +7,7 @@
 custom_minimum_size = Vector2(120, 180)
 size = Vector2(120, 180)
 mouse_filter = 0
+clip_contents = true
 script = ExtResource("1_card")
 
 [node name="Background" type="TextureRect" parent="."]

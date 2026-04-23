@@ -134,7 +134,7 @@ func _try_play_card(card: Card) -> void:
 func _apply_effect(data: CardData) -> void:
 	if data.damage > 0:
 		var dmg := data.damage + player_strength
-		var absorbed := min(dmg, enemy_block)
+		var absorbed: int = min(dmg, enemy_block)
 		enemy_block -= absorbed
 		enemy_hp -= dmg - absorbed
 	if data.block_amount > 0:
@@ -160,7 +160,7 @@ func _on_end_turn_pressed() -> void:
 
 func _run_enemy_turn() -> void:
 	var dmg := 11 + enemy_strength
-	var absorbed := min(dmg, player_block)
+	var absorbed: int = min(dmg, player_block)
 	player_block -= absorbed
 	player_hp -= dmg - absorbed
 	_update_ui()

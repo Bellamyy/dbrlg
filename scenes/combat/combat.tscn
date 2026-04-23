@@ -1,0 +1,146 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_cmbt"]
+
+[node name="CombatScene" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cmbt")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.082, 0.082, 0.149, 1)
+
+[node name="BattleArea" type="Control" parent="."]
+offset_right = 1280.0
+offset_bottom = 370.0
+
+[node name="PlayerSide" type="Control" parent="BattleArea"]
+offset_left = 80.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 360.0
+
+[node name="PlayerSprite" type="ColorRect" parent="BattleArea/PlayerSide"]
+offset_right = 100.0
+offset_bottom = 150.0
+color = Color(0.2, 0.4, 0.8, 1)
+
+[node name="PlayerNameLabel" type="Label" parent="BattleArea/PlayerSide"]
+offset_left = 0.0
+offset_top = -26.0
+offset_right = 130.0
+offset_bottom = -6.0
+text = "Ironclad"
+theme_override_font_sizes/font_size = 14
+
+[node name="HPLabel" type="Label" parent="BattleArea/PlayerSide"]
+offset_left = 0.0
+offset_top = 156.0
+offset_right = 160.0
+offset_bottom = 176.0
+text = "HP: 80/80"
+theme_override_font_sizes/font_size = 13
+
+[node name="BlockLabel" type="Label" parent="BattleArea/PlayerSide"]
+offset_left = 0.0
+offset_top = 178.0
+offset_right = 160.0
+offset_bottom = 198.0
+text = "Block: 0"
+theme_override_font_sizes/font_size = 12
+
+[node name="EnemySide" type="Control" parent="BattleArea"]
+offset_left = 1000.0
+offset_top = 50.0
+offset_right = 1220.0
+offset_bottom = 360.0
+
+[node name="EnemySprite" type="ColorRect" parent="BattleArea/EnemySide"]
+offset_right = 100.0
+offset_bottom = 150.0
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="EnemyNameLabel" type="Label" parent="BattleArea/EnemySide"]
+offset_left = 0.0
+offset_top = -26.0
+offset_right = 180.0
+offset_bottom = -6.0
+text = "Jaw Worm"
+theme_override_font_sizes/font_size = 14
+
+[node name="IntentLabel" type="Label" parent="BattleArea/EnemySide"]
+offset_left = 0.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = -28.0
+text = "Attack 11"
+theme_override_font_sizes/font_size = 12
+
+[node name="HPLabel" type="Label" parent="BattleArea/EnemySide"]
+offset_left = 0.0
+offset_top = 156.0
+offset_right = 160.0
+offset_bottom = 176.0
+text = "HP: 42/44"
+theme_override_font_sizes/font_size = 13
+
+[node name="PlayZone" type="Panel" parent="."]
+offset_left = 200.0
+offset_top = 375.0
+offset_right = 1080.0
+offset_bottom = 520.0
+
+[node name="PlayZoneLabel" type="Label" parent="PlayZone"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -15.0
+offset_right = 130.0
+offset_bottom = 15.0
+text = "▼  Drop Card Here to Play  ▼"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+
+[node name="HandContainer" type="Control" parent="."]
+offset_left = 0.0
+offset_top = 530.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="EnergyLabel" type="Label" parent="UILayer"]
+offset_left = 20.0
+offset_top = 650.0
+offset_right = 260.0
+offset_bottom = 680.0
+text = "Energy: 3/3"
+theme_override_font_sizes/font_size = 18
+
+[node name="TurnLabel" type="Label" parent="UILayer"]
+offset_left = 440.0
+offset_top = 20.0
+offset_right = 840.0
+offset_bottom = 56.0
+text = "Your Turn"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 24
+
+[node name="EndTurnButton" type="Button" parent="UILayer"]
+offset_left = 1090.0
+offset_top = 625.0
+offset_right = 1260.0
+offset_bottom = 685.0
+text = "End Turn"
+theme_override_font_sizes/font_size = 16

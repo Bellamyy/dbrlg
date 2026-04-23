@@ -10,9 +10,15 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Spire of Ashes"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+run/main_scene="res://scenes/combat/combat.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [physics]
 

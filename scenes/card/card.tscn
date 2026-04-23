@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/card/card.gd" id="1_card"]
+[ext_resource type="Texture2D" path="res://assets/cards/card_template.png" id="2_tmpl"]
+
+[node name="Card" type="Control"]
+custom_minimum_size = Vector2(120, 180)
+size = Vector2(120, 180)
+mouse_filter = 0
+script = ExtResource("1_card")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tmpl")
+stretch_mode = 0
+
+[node name="Cost" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 29.0
+offset_bottom = 25.0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 14
+
+[node name="CardName" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 110.0
+offset_right = 114.0
+offset_bottom = 126.0
+text = "Card Name"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 11
+
+[node name="TypeLabel" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 127.0
+offset_right = 114.0
+offset_bottom = 139.0
+text = "ATTACK"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 8
+
+[node name="Description" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 140.0
+offset_right = 114.0
+offset_bottom = 172.0
+text = "Description"
+horizontal_alignment = 1
+autowrap_mode = 3
+theme_override_font_sizes/font_size = 9
